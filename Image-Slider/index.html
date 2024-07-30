@@ -63,33 +63,35 @@
         let imgIndex = 0;
 
         function prev(){
-            // if(imgIndex == 0)
-            // {
-            //     imgIndex = imageSection.length - 1;
-            // }
-            // else{
-            //     imgIndex--;
-            // }
+            if(imgIndex == 0)
+            {
+                imgIndex = imageSection.length - 1;
+            }
+            else{
+                imgIndex--;
+            }
 
-            if(imgIndex>0)
-        {
-            imgIndex--;
-        }
+             // Short method last to first
+        //     if(imgIndex>0)
+        // {
+        //     imgIndex--;
+        // }
           const imageElement = document.getElementById('images');
           imageElement.src = imageSection[imgIndex];
         }
 
         function next(){
-            // if(imgIndex == imageSection.length-1){
-            //     imgIndex = 0;
-            // }
-            // else{
-            //     imgIndex++;
-            // }
-
-            if(imgIndex < imageSection.length-1){
+            if(imgIndex == imageSection.length-1){
+                imgIndex = 0;
+            }
+            else{
                 imgIndex++;
             }
+
+            // Short method last to first
+            // if(imgIndex < imageSection.length-1){
+            //     imgIndex++;
+            // }
 
            const imageElement = document.getElementById('images');
            imageElement.src = imageSection[imgIndex]; 
