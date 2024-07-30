@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body{
+            background-color: rgb(189, 195, 193);
+        }
+       .image-section{
+        width: 900px;
+        height: 500px;
+        object-fit: fill;
+        display: block;
+        margin: 20px auto;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+
+       }
+       .arrow-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+
+       .left-btn{
+          right: 78vw;
+          
+       }
+       .right-btn{
+          left: -21vw;
+       }
+       .btn{
+        height: 50px;
+        position: relative;
+       }
+       h1{
+        text-align: center;
+       }
+
+    </style>
+</head>  
+<body>
+    <h1>* Explore The Maharashtra *</h1>
+
+    <div class="arrow-container">
+        <img src="./1.jpg" alt="" class="image-section" id="images">
+        <img src="./left-arrow.png" class=" btn left-btn" onclick="prev()">
+        <img src="./right-arrow.png" class=" btn right-btn" onclick="next()">
+    </div>
+
+    <script>
+        const imageSection = [
+            "./1.jpg",
+            "./2.jpg",
+            "./3.JPG",
+            "./4.png",
+            "./5.jpg",
+            "./6.png",
+            "./7.avif"
+        ];
+
+        let imgIndex = 0;
+
+        function prev(){
+            if(imgIndex == 0)
+            {
+                imgIndex = imageSection.length - 1;
+            }
+            else{
+                imgIndex--;
+            }
+
+          const imageElement = document.getElementById('images');
+          imageElement.src = imageSection[imgIndex];
+        }
+
+        function next(){
+            if(imgIndex == imageSection.length-1){
+                imgIndex = 0;
+            }
+            else{
+                imgIndex++;
+            }
+
+           const imageElement = document.getElementById('images');
+           imageElement.src = imageSection[imgIndex]; 
+        }
+    </script>
+</body>
+</html>
