@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <div>
+        <textarea cols="30" rows="10" id="text-area"></textarea>
+    </div>
+
+    <div>
+        <p id="show-text"></p>
+    </div>
+
+    <button onclick="Show()">Click here</button>
+</div>
+<script>
+    function Show() {
+            const text = document.getElementById("text-area");
+            const shows = document.getElementById("show-text");
+
+            shows.innerText = text.value;
+
+            text.value = " ";
+    }
+</script>
+</body>
+</html>
